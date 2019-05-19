@@ -16,13 +16,23 @@ import com.example.sophie.astrodomus.R;
 
 public class Validations {
 
-
+    /**
+     *Mensajes finales de errores.
+     */
     public static final String ERROR_LOGIN2="ERROR CONTRASEÑA";
     public static final String ERROR_LOGIN3="ERROR DATOS";
     public static final String ERROR_SERVER="ERROR SERVIDOR 500";
     private Dialog dialog;
 
 
+    /**
+     *
+     *
+     * @param ERROR TIPO DE ERROR-
+     * @param context Contexto donde se realiza la operación
+     *                En el metodo se inicia el dialogo donde se hizo previamente las validaciones. Este le mostrará al usuario cuál fue el error.
+     *
+     */
     public void init(String ERROR, Context context){
         dialog= new Dialog(context);
         dialog.setContentView(R.layout.dialog_error);

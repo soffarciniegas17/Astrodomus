@@ -6,8 +6,26 @@ package com.example.sophie.astrodomus.models;
 
 public class Usuario {
 
+    /**
+     * Modelo de Usuario de base de datos.
+     *
+     */
+
     private String id_usuario, nombre1, nombre2, apellido1, apellido2, correo, clave, id_rol, id_estado;
 
+
+    /**
+     *
+     * @param id_usuario el id del usuario
+     * @param nombre1 primer nombre
+     * @param nombre2 segundo nombre si se encuestra
+     * @param apellido1 primer apellido
+     * @param apellido2 segundo apellido
+     * @param correo correo
+     * @param clave contraseña del usuario
+     * @param id_rol tipo de rol ( LLega el nombre del tipo de rol)
+     * @param id_estado  Estado de activo e inactivo
+     */
     public Usuario(String id_usuario, String nombre1, String nombre2, String apellido1, String apellido2, String correo, String clave, String id_rol, String id_estado) {
         this.id_usuario = id_usuario;
         this.nombre1 = nombre1;
@@ -19,6 +37,11 @@ public class Usuario {
         this.id_rol = id_rol;
         this.id_estado = id_estado;
     }
+
+    /**
+     * METODOS GET Y SETTERS
+     *
+     */
 
     public String getNombre1() {
         return nombre1;

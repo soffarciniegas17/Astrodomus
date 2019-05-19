@@ -2,24 +2,45 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="357dp"
-    android:layout_height="89dp"
+    android:layout_height="100dp"
     android:orientation="horizontal"
     android:padding="10dp"
+    android:layout_gravity="center"
     android:gravity="center_vertical"
     android:background="@drawable/base_blue">
 
     <ImageView
+        android:id="@+id/id_image_item_activity"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_report"/>
+        android:src="@drawable/ic_out"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:padding="10dp"
-        android:textSize="17sp"
-        android:text="Se ha entrado al espacio SALA a las 4:50pm "
-        />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:id="@+id/id_text_item_activity"
+            android:text="Usuario: Tatiana "
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:id="@+id/id_detalle_item_activity"
+            android:text="Detalle: Se ha entrado al espacio SALA a las 4:50pm "
+            />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

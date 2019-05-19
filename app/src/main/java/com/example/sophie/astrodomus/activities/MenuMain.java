@@ -1,5 +1,6 @@
 package com.example.sophie.astrodomus.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,4 +17,8 @@ public class MenuMain extends AppCompatActivity {
     }
 
 
+    public void logout(View view) {
+        startActivity(new Intent(this, Login.class));
+        finish();
+    }
 }

@@ -16,10 +16,11 @@
         android:weightSum="20">
 
         <Button
+            android:onClick="logout"
             android:layout_width="0dp"
             android:layout_height="27dp"
             android:layout_weight="1.5"
-            android:background="@drawable/ic_power" />
+            android:background="@drawable/ic_power"/>
 
         <TextView
             android:layout_width="0dp"
@@ -70,6 +71,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
+                android:id="@+id/user_main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="alef"
@@ -78,6 +80,7 @@
                 android:textSize="25dp" />
 
             <TextView
+                android:id="@+id/rol_main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alef"
@@ -102,7 +105,7 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="317dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,11 +120,12 @@
                 android:text="Actividad"
                 android:textColor="@color/colorText" />
 
+
             <GridView
+                android:id="@+id/grid_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
-
 
     </android.support.constraint.ConstraintLayout>
 
