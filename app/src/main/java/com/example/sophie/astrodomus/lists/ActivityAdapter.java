@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sophie.astrodomus.R;
 import com.example.sophie.astrodomus.models.Reporte;
@@ -19,13 +20,12 @@ public class ActivityAdapter extends BaseAdapter {
     private ArrayList<Reporte> list;
     private Context context;
     private int blade;
-    private int type;
 
-    public ActivityAdapter(ArrayList<Reporte> list, Context context, int blade, int type) {
+
+    public ActivityAdapter(ArrayList<Reporte> list, Context context, int blade) {
         this.list = list;
         this.context = context;
         this.blade = blade;
-        this.type = type;
     }
 
     @Override
@@ -55,27 +55,33 @@ public class ActivityAdapter extends BaseAdapter {
             holder.usuario = v.findViewById(R.id.id_text_item_activity);
             holder.detalle = v.findViewById(R.id.id_detalle_item_activity);
 
-            switch (type){
-                case 02:
-                    holder.image.setBackgroundResource(R.drawable.ic_component);
-                    break;
-                case 03:
-                    holder.image.setBackgroundResource(R.drawable.ic_in);
-                    break;
-                case 04:
-                    holder.image.setBackgroundResource(R.drawable.ic_out);
-                    break;
-                case 05:
-                    holder.image.setBackgroundResource(R.drawable.ic_alert);
-                    break;
-                case 06:
-                    holder.image.setBackgroundResource(R.drawable.ic_update);
-                    break;
-            }
-
             Reporte reporte = list.get(i);
             holder.usuario.setText(reporte.getNombre());
-            holder.detalle.setText(reporte.getDetalle());
+
+            if(reporte.getDetalle().equals("null")){
+                holder.detalle.setText(reporte.getTipoReporteDet());
+            }else{
+                holder.detalle.setText(reporte.getDetalle());
+            }
+
+
+            switch (reporte.getTipoReporte()){
+                case "01":
+                    holder.image.setBackgroundResource(R.drawable.ic_update);
+                    break;
+                case "02":
+                    holder.image.setBackgroundResource(R.drawable.ic_in);
+                    break;
+                case "03":
+                    holder.image.setBackgroundResource(R.drawable.ic_out);
+                    break;
+                case "04":
+                    holder.image.setBackgroundResource(R.drawable.ic_component);
+                    break;
+                case "05":
+                    holder.image.setBackgroundResource(R.drawable.ic_alert);
+                    break;
+            }
 
         }else{
              holder = (Holder) v.getTag();

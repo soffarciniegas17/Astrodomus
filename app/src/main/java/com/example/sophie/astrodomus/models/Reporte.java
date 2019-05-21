@@ -6,8 +6,26 @@ package com.example.sophie.astrodomus.models;
 
 public class Reporte {
 
-    private String id_reporte, nombre, tipoReporte, ambiente, hora, fecha, detalle;
+    private String id_reporte, nombre, tipoReporte, tipoReporteDet, ambiente, hora, fecha, detalle;
 
+    public Reporte(String id_reporte, String nombre, String tipoReporte, String tipoReporteDet, String ambiente, String hora, String fecha, String detalle) {
+        this.id_reporte = id_reporte;
+        this.nombre = nombre;
+        this.tipoReporte = tipoReporte;
+        this.ambiente = ambiente;
+        this.hora = hora;
+        this.fecha = fecha;
+        this.detalle = detalle;
+        this.tipoReporteDet = tipoReporteDet;
+    }
+
+    public String getTipoReporteDet() {
+        return tipoReporteDet;
+    }
+
+    public void setTipoReporteDet(String tipoReporteDet) {
+        this.tipoReporteDet = tipoReporteDet;
+    }
 
     public String getId_reporte() {
         return id_reporte;

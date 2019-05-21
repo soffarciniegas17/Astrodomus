@@ -12,6 +12,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.sophie.astrodomus.activities.MenuMain;
 import com.example.sophie.astrodomus.models.Usuario;
+import com.example.sophie.astrodomus.utils.Constans;
 import com.example.sophie.astrodomus.utils.SendMail;
 import com.example.sophie.astrodomus.utils.Validations;
 
@@ -39,7 +40,7 @@ public class UsuarioControl implements Response.Listener<JSONObject>, Response.E
         this.process = prccess;
 
 
-        String url = "http://192.168.43.129:8000/api/usuario/"+username;
+        String url = Constans.URL+ "usuario/"+username;
         jsonrequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         request.add(jsonrequest);
     }
@@ -99,7 +100,6 @@ public class UsuarioControl implements Response.Listener<JSONObject>, Response.E
 
         }else if(user.get(0).equals(username)){
             validations.init(Validations.ERROR_LOGIN2, context);
-
         }
     }
 
