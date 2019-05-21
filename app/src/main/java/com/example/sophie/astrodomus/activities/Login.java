@@ -79,7 +79,7 @@ public class Login extends AppCompatActivity {
 
     public void email(View view) {
         if(username.getText().toString().equals("")){
-            username.setError("Debe ingresar un usuario.");
+            username.setError("Debe ingresar un usuario");
         }else{
             UsuarioControl usuarioC = new UsuarioControl();
             usuarioC.find(username.getText().toString(), "", 1, this);

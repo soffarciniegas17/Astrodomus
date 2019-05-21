@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:layout_gravity="center"
-    android:background="@drawable/base_green"
+    android:background="@drawable/base_blue"
     android:layout_width="300dp"
     android:layout_height="370dp">
 
@@ -25,7 +25,7 @@
         />
 
     <LinearLayout
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

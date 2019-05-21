@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@color/blue"
         android:orientation="horizontal"
-        android:padding="3dp"
+        android:padding="5dp"
         android:weightSum="20">
 
         <Button
@@ -106,19 +106,24 @@
             android:id="@+id/linearLayout3"
             android:layout_width="0dp"
             android:layout_height="317dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="0dp"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="0dp">
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="10dp"
-                android:text="Actividad"
-                android:textColor="@color/colorText" />
+                android:text="Actividad reciente"
+                android:textAlignment="center"
+                android:textColor="@color/colorText"
+                android:textSize="16sp" />
 
 
             <GridView

@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.example.sophie.astrodomus.R;
+import com.example.sophie.astrodomus.utils.Constans;
 import com.example.sophie.astrodomus.utils.Validations;
 
 import org.json.JSONObject;
@@ -62,7 +63,7 @@ public class PassChange implements Response.Listener<JSONObject>, Response.Error
     }
 
     public void rest(String password){
-        String url = "http://192.168.43.129:8000/api/usuario/"+ usuario+ "?clave="+password;
+        String url = Constans.URL+ "usuario/"+ usuario+ "?clave="+password;
         jsonrequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         request.add(jsonrequest);
     }
