@@ -11,7 +11,7 @@ public class Usuario {
      *
      */
 
-    private String id_usuario, nombre1, nombre2, apellido1, apellido2, correo, clave, id_rol, id_estado;
+    private String id_usuario, nombre1, nombre2, apellido1, apellido2, usuario, correo, clave, rol, estado;
 
 
     /**
@@ -23,10 +23,10 @@ public class Usuario {
      * @param apellido2 segundo apellido
      * @param correo correo
      * @param clave contraseña del usuario
-     * @param id_rol tipo de rol ( LLega el nombre del tipo de rol)
-     * @param id_estado  Estado de activo e inactivo
+     * @param rol tipo de rol ( LLega el nombre del tipo de rol)
+     * @param estado  Estado de activo e inactivo
      */
-    public Usuario(String id_usuario, String nombre1, String nombre2, String apellido1, String apellido2, String correo, String clave, String id_rol, String id_estado) {
+    public Usuario(String id_usuario, String nombre1, String nombre2, String apellido1, String apellido2, String correo, String clave, String rol, String estado) {
         this.id_usuario = id_usuario;
         this.nombre1 = nombre1;
         this.nombre2 = nombre2;
@@ -34,8 +34,12 @@ public class Usuario {
         this.apellido2 = apellido2;
         this.correo = correo;
         this.clave = clave;
-        this.id_rol = id_rol;
-        this.id_estado = id_estado;
+        this.rol = rol;
+        this.estado = estado;
+    }
+
+    public Usuario(){
+
     }
 
     /**
@@ -49,6 +53,14 @@ public class Usuario {
 
     public void setNombre1(String nombre1) {
         this.nombre1 = nombre1;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getNombre2() {
@@ -91,20 +103,20 @@ public class Usuario {
         this.clave = clave;
     }
 
-    public String getId_estado() {
-        return id_estado;
+    public String getRol() {
+        return rol;
     }
 
-    public void setId_estado(String id_estado) {
-        this.id_estado = id_estado;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
-    public String getId_rol() {
-        return id_rol;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setId_rol(String id_rol) {
-        this.id_rol = id_rol;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getId_usuario() {
