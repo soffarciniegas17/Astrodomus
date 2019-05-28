@@ -55,7 +55,7 @@ public class UsuarioControl implements Response.Listener<JSONObject>, Response.E
     public void onResponse(JSONObject response) {
         String status = response.optString("status");
 
-
+        System.out.println(response );
        if(status.equals("1")){
             JSONArray json  = response.optJSONArray("usuario");
         try {

@@ -147,25 +147,46 @@
                 android:enabled="false"
                 android:id="@+id/txt_rol"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:text="Rol"
-                android:fontFamily="@font/alef"
-                android:textSize="17dp"/>
-
             <Button
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Cambiar contraseña"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:textSize="17dp"
                 android:id="@+id/btn_contra"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Guardar"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:onClick="guardarCambios"
+                    android:textSize="17dp"
+                    android:id="@+id/btn_guardar"/>
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:onClick="cancelar"
+                    android:textSize="17dp"
+                    android:id="@+id/btn_cancelar"/>
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
