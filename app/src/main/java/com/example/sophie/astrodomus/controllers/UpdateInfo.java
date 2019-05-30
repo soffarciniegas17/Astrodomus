@@ -1,7 +1,10 @@
 package com.example.sophie.astrodomus.controllers;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.DownloadManager;
 import android.content.Context;
+import android.widget.Toast;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
@@ -23,6 +26,7 @@ public class UpdateInfo implements Response.Listener<String>, Response.ErrorList
     private Context context;
     private Usuario user;
     private UsuarioInfo usuarioInfo;
+    AlertDialog.Builder ventana;
 
     public void update(Usuario user, Context context){
         this.context = context;
@@ -41,11 +45,18 @@ public class UpdateInfo implements Response.Listener<String>, Response.ErrorList
 
     @Override
     public void onResponse(String response) {
-        System.out.println(response.toString());
+        if(response.equals("true")){
+            ventana = new AlertDialog.Builder(context);
+            ventana.setIcon(android.R.drawable.ic_dialog_info)
+                    .setTitle("Guardado")
+                    .setMessage("Se ha actualizado su información satisfactoriamente")
+                    .setPositiveButton("Aceptar", null)
+                    .show();
+        }
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        System.out.println("Error Volley: " + error);
+        Toast.makeText(context, "Error en el servidor", Toast.LENGTH_SHORT).show();
     }
 }

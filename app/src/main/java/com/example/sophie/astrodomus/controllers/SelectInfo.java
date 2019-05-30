@@ -53,7 +53,7 @@ public class SelectInfo implements Response.Listener<JSONArray>, Response.ErrorL
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        System.out.println("Volley Error: " + error);
+        Toast.makeText(context, "Error en el servidor", Toast.LENGTH_SHORT).show();
     }
 
     @Override
