@@ -1,5 +1,6 @@
 package com.example.sophie.astrodomus.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,8 @@ public class Perfiles extends AppCompatActivity {
     }
 
     public void insertarPerfil(View v){
-
+        Intent siguiente = new Intent(this, NewProfile.class);
+        startActivity(siguiente);
     }
 
     public void cancelar(View v){

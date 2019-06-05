@@ -29,7 +29,13 @@ public class PerfilAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return list.size();
+        int conteo = 0;
+        if(list.isEmpty()){
+            conteo = 1;
+        }else{
+            conteo = list.size();
+        }
+        return conteo;
     }
 
     @Override
@@ -55,17 +61,18 @@ public class PerfilAdapter extends BaseAdapter {
             holder.ambiente = v.findViewById(R.id.id_ambiente_item_perfil);
             holder.tag = v.findViewById(R.id.id_tag_item_perfil);
 
-            Perfil perfil = list.get(i);
 
-            if(list == null){
+            System.out.println(list);
+
+            if(list.isEmpty()){
                 holder.image.setBackgroundResource(R.drawable.ic_empty);
                 holder.ambiente.setText("No se encontraron perfiles");
                 holder.ambiente.setGravity(View.TEXT_ALIGNMENT_CENTER);
-                holder.ambiente.setTextSize(40);
                 holder.usuario.setVisibility(View.INVISIBLE);
                 holder.tag.setVisibility(View.INVISIBLE);
 
             }else{
+                Perfil perfil = list.get(i);
                 holder.usuario.setText(perfil.getUsuario() + "");
                 holder.ambiente.setText(perfil.getAmbiente() + "");
                 holder.tag.setText(perfil.getTag() + "");
