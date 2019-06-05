@@ -34,7 +34,7 @@ public class UsuarioInfo extends AppCompatActivity {
             @Override
             public void run() {
                 while (true) {
-                    service.find("06", user, UsuarioInfo.this);
+                    service.find("06", UsuarioInfo.this);
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

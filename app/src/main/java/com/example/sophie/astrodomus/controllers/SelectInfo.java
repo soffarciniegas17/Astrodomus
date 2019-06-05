@@ -38,9 +38,8 @@ public class SelectInfo implements Response.Listener<JSONArray>, Response.ErrorL
         this.usuarioInfo = usuarioInfo;
     }
 
-    public void find(String iduser, Usuario user, Context context){
+    public void find(String iduser, Context context){
         this.context = context;
-        this.user = user;
         request= Volley.newRequestQueue(context);
         this.iduser = iduser;
 
