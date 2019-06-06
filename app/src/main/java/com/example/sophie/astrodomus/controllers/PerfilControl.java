@@ -36,7 +36,7 @@ public class PerfilControl implements Response.Listener<JSONObject>, Response.Er
         this.gridView = gridView;
         requestQueue = Volley.newRequestQueue(context);
 
-        String url = "http://"+ Constantes.ipdylan2 +"/ServiciosAdomus/Perfil/consultarPerfiles.php?id="+ id_user;
+        String url = "http://"+ Constantes.ipdylan +"/ServiciosAdomus/Perfil/consultarPerfiles.php?id="+ id_user;
 
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         requestQueue.add(jsonObjectRequest);

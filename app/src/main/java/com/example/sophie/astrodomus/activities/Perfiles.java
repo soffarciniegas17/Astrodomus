@@ -8,17 +8,16 @@ import android.widget.GridView;
 
 import com.example.sophie.astrodomus.R;
 import com.example.sophie.astrodomus.controllers.PerfilControl;
+import com.example.sophie.astrodomus.models.Perfil;
 
 public class Perfiles extends AppCompatActivity {
 
+    PerfilControl control;
+    GridView gridView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfiles);
-
-        GridView gridView = (GridView) findViewById(R.id.grid_perfil);
-        PerfilControl control = new PerfilControl();
-        control.find("05", this, gridView);
     }
 
     public void insertarPerfil(View v){
@@ -30,5 +29,26 @@ public class Perfiles extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                while (true){
+                    gridView = (GridView) findViewById(R.id.grid_perfil);
+                    control = new PerfilControl();
+                    control.find("05", Perfiles.this, gridView);
 
+                }
+
+            }
+        });
+
+    }
 }
